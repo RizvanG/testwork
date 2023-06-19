@@ -1,0 +1,32 @@
+.status {
+    padding: 20px;
+}
+
+.status_title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.status_nav {
+    display: flex;
+    align-items: center;
+}
+
+.status_tab {
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    color: #616161;
+    background-color: #b5b5b5;
+}
+
+.status_tab:hover {
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    color: #000;
+    background-color: #b5b5b5;   
+}
+

@@ -1,0 +1,41 @@
+.sidebar {
+    width: 15%;
+    height: 100vh;
+    color: #fff;
+    background-color: rgb(2, 93, 168);
+}
+
+.sidebar_box {
+    padding: 20px 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.logoIcon {
+    font-size: 45px;
+}
+
+.iconText {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.txt {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav {
+    margin-top: 32px;
+}
+
+.button {
+    margin-bottom: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}

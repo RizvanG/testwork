@@ -1,0 +1,27 @@
+.scenarios {
+    height: 90vh;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.head {
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.date {
+    font-size: 13px;
+    color: rgb(1, 124, 206);
+    margin: 0px 0px 6px 6px;
+}
+
+.text {
+    margin: 16px 0px;
+}
