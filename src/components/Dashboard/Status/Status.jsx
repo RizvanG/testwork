@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as xlsx from "xlsx";
-import style from "./Status.module.css";
 import TabContent from "./TabContent";
+import style from "./Status.module.css";
 
 export default function Status() {
   const [value, setValue] = useState(2);
@@ -20,10 +20,6 @@ export default function Status() {
       title: "Следующая неделя",
     },
   ];
-
-  function handleChange(e) {
-    setValue(e.target.id);
-  }
 
   const prevWeek = [
     {
@@ -139,10 +135,12 @@ export default function Status() {
     },
   ];
 
-  function handleClickExport() {
-    let wb = xlsx.utils.book_new();
-    const title = wb.Sheets;
+  function handleChange(e) {
+    setValue(e.target.id);
+  }
 
+  function handleClickExport() {
+    let wb = xlsx.utils.book_new()
     let ws =
       value == 1
         ? xlsx.utils.json_to_sheet(prevWeek)

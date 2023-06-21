@@ -1,0 +1,36 @@
+.dashboard_body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    padding: 15px 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 345px;
+}
+
+.cardIcon {
+    max-width: 50px;
+    width: 100%;
+    height: 50px;
+}
+
+.txtCardIcon {
+    margin-right: 6px;
+    font-size: 24px;
+}
+
+@media (max-width: 1680px) {
+    .dashboard_body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
