@@ -1,8 +1,7 @@
 import React from "react";
-import style from './Sidebar.module.css';
 import { Link } from "react-router-dom";
 import { BiUserCheck } from 'react-icons/bi'
-
+import style from './Sidebar.module.css';
 
 export default function Sidebar() {
     return (
@@ -20,7 +19,7 @@ export default function Sidebar() {
                     <Link to='/dashboard' className={style.button}>
                         Дашбоард       
                     </Link>
-                    <Link to='/main' className={style.button}>
+                    <Link to='/users' className={style.button}>
                         Сотрудники       
                     </Link>
                 </div>

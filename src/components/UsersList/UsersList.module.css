@@ -1,4 +1,10 @@
 .dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.dashboard_box {
     padding: 15px 20px;
 }
 
@@ -34,7 +40,7 @@
     color: #05b9f0;
 }
 
-.dashboard_bar {
+.bar {
     padding: 20px;
     border-radius: 20px;
     background-color: rgb(235, 235, 235);
@@ -46,7 +52,7 @@
     margin:  0 auto;
 }
 
-.dashboard_table {
+.table {
     padding: 20px;
     border-radius: 20px;
     background-color: rgb(235, 235, 235);
