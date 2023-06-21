@@ -12,6 +12,8 @@
 .status_nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    max-width: 680px;
 }
 
 .status_tab {
@@ -28,5 +30,18 @@
     border-radius: 10px;
     color: #000;
     background-color: #b5b5b5;   
+}
+
+.status_tab_content {
+    margin-top: 24px;
+}
+
+.status_btn {
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+    padding: 15px 40px;
+    border-radius: 20px;
+    background-color: rgb(241, 238, 236);
 }
 

@@ -3,15 +3,31 @@
   padding: 0;
 }
 
+.body {
+  height: 100%;
+}
 
 .wrapper {
+  height: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   width: 85%;
+}
+
+.content {
+  display: none;
+}
+
+.content_active {
+  display: block;
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 12px;
 }
