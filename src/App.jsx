@@ -10,9 +10,9 @@ function App() {
       <div className="wrapper">
         <Sidebar />
         <Routes>
-          <Route path='/' element={<UsersList />} />
-          <Route path='/main' element={<Main />} />
+          <Route path='/' element={<Main />} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/users' element={<UsersList />} />
         </Routes>
     </div>
     </>
