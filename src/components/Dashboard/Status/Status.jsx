@@ -140,13 +140,14 @@ export default function Status() {
   }
 
   function handleClickExport() {
-    let wb = xlsx.utils.book_new()
     let ws =
       value == 1
         ? xlsx.utils.json_to_sheet(prevWeek)
         : value == 2
         ? xlsx.utils.json_to_sheet(currentWeek)
         : xlsx.utils.json_to_sheet(nextWeek);
+        xlsx.utils.sheet_add_aoa(ws, [["Задача", "Время", "Статус", "Значение", "Осталось"]], {origin: "A1"});
+    let wb = xlsx.utils.book_new()
     xlsx.utils.book_append_sheet(wb, ws, "MySheet1");
     xlsx.writeFile(wb, "MyExcel.xlsx");
   }
