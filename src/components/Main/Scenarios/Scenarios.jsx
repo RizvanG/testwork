@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { URL } from "../../constants/constants";
 import axios from "axios";
 import style from "./Scenarios.module.css";
 
@@ -7,12 +8,8 @@ export default function Scenarios({ title }) {
 
     const getListScenarios = async () => {
         try {
-            await axios
-                .get("http://localhost:5020/api/scenarios")
-                .then((res) => {
-                    const scenarios = res.data;
-                    setData(scenarios);
-                });
+            const { data } = await axios.get(`${URL}/scenarios`);
+            setData(data);
         } catch (error) {
             console.log(error);
         }

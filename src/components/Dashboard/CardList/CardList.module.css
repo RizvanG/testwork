@@ -14,13 +14,42 @@
     max-width: 345px;
 }
 
-.cardIcon {
+.button {
+    font-size: 14px;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    width: 200;
+}
+
+.text {
+    margin-top: 20px;
+    color: var(--color-text-card);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.card_icon {
     max-width: 50px;
     width: 100%;
     height: 50px;
 }
 
-.txtCardIcon {
+.sb_title {
+    color: var(--green);
+    text-transform: uppercase;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.txt_card_icon {
     margin-right: 6px;
     font-size: 24px;
 }

@@ -1,4 +1,4 @@
-.dashboard{
+.dashboard {
     display: flex;
     flex-direction: column;
     width: 85%;
@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-.headIcon {
+.head_icon {
     font-size: 32px;
     margin-right: 12px;
 }
@@ -30,14 +30,14 @@
     font-weight: bold;
 }
 
-.btnIcon {
+.btn_icon {
     font-size: 24px;
     margin-right: 12px;
 }
 
 .btn_txt {
     text-transform: uppercase;
-    color: #05b9f0;
+    color: var(--color-btn);
 }
 
 

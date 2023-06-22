@@ -1,7 +1,7 @@
 .sidebar {
     width: 15%;
-    color: #fff;
-    background-color: rgb(2, 93, 168);
+    color: var(--white);
+    background-color: var(--bg-sidebar);
 }
 
 .sidebar_box {
@@ -14,11 +14,11 @@
     margin-bottom: 24px;
 }
 
-.iconLogo {
+.icon_logo {
     font-size: 45px;
 }
 
-.iconText {
+.icon_text {
     font-size: 24px;
     font-weight: bold;
 }
@@ -40,7 +40,7 @@
     font-size: 26px;
     font-weight: bold;
     list-style-type: none;
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     cursor: pointer;
 }

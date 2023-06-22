@@ -2,33 +2,10 @@
     height: 90vh;
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 15px;
 }
 
-.head {
+.title {
     text-transform: uppercase;
-}
-
-.accordian {
-    padding: 16px;
-    margin-top: 24px;
-    background-color:rgb(223, 223, 223);
-    border: 1px solid rgb(182, 178, 178);
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.date {
-    font-size: 12px;
-    color: rgb(133, 130, 130);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.accordianIcon {
-    width: 20px;
-    height: 20px;
 }

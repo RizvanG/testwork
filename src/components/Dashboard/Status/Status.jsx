@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import * as xlsx from "xlsx";
+import { TABS } from "../../constants/constants";
 import TabContent from "./TabContent";
 import style from "./Status.module.css";
 
 export default function Status() {
-  const [value, setValue] = useState(2);
-
-  const tabs = [
-    {
-      id: 1,
-      title: "Прошлая неделя",
-    },
-    {
-      id: 2,
-      title: "Текущая неделя",
-    },
-    {
-      id: 3,
-      title: "Следующая неделя",
-    },
-  ];
+  const [currentTab, setCurrentTab] = useState(2);
 
   const prevWeek = [
     {
@@ -135,34 +121,37 @@ export default function Status() {
     },
   ];
 
-  function handleChange(e) {
-    setValue(e.target.id);
-  }
+  const handleChange = (index) => {
+    setCurrentTab(index);
+  };
 
-  function handleClickExport() {
+  const handleClickExport = () => {
     let ws =
-      value == 1
+    currentTab == 1
         ? xlsx.utils.json_to_sheet(prevWeek)
-        : value == 2
+        : currentTab == 2
         ? xlsx.utils.json_to_sheet(currentWeek)
         : xlsx.utils.json_to_sheet(nextWeek);
-        xlsx.utils.sheet_add_aoa(ws, [["Задача", "Время", "Статус", "Значение", "Осталось"]], {origin: "A1"});
-    let wb = xlsx.utils.book_new()
+    xlsx.utils.sheet_add_aoa(
+      ws,
+      [["Задача", "Время", "Статус", "Значение", "Осталось"]],
+      { origin: "A1" }
+    );
+    let wb = xlsx.utils.book_new();
     xlsx.utils.book_append_sheet(wb, ws, "MySheet1");
     xlsx.writeFile(wb, "MyExcel.xlsx");
-  }
+  };
 
   return (
     <div className={style.status}>
       <div className={style.status_title}>Список задач</div>
       <div className={style.status_body}>
         <div className={style.status_nav}>
-          {tabs.map((tab, index) => (
+          {TABS.map((tab, index) => (
             <div
               className={style.status_tab}
               key={index}
-              id={tab.id}
-              onClick={handleChange}
+              onClick={() => handleChange(index)}
             >
               {tab.title}
             </div>
@@ -172,13 +161,7 @@ export default function Status() {
           </div>
         </div>
         <div className={style.status_tab_content}>
-          {value == 1 ? (
-            <TabContent rows={prevWeek} />
-          ) : value == 2 ? (
-            <TabContent rows={currentWeek} />
-          ) : (
-            <TabContent rows={nextWeek} />
-          )}
+          <TabContent currentTab={currentTab}/>
         </div>
       </div>
     </div>

@@ -25,25 +25,25 @@
     font-weight: bold;
 }
 
-.headIcon {
+.head_icon {
     font-size: 32px;
     margin-right: 12px;
 }
 
-.btnIcon {
+.btn_icon {
     font-size: 24px;
     margin-right: 12px;
 }
 
 .btn_txt {
     text-transform: uppercase;
-    color: #05b9f0;
+    color: var(--color-btn);
 }
 
 .bar {
     padding: 20px;
     border-radius: 20px;
-    background-color: rgb(235, 235, 235);
+    background-color: var(--bg-bar);
     
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@
 .table {
     padding: 20px;
     border-radius: 20px;
-    background-color: rgb(235, 235, 235);
+    background-color: var(--bg-bar);
     
     display: flex;
     flex-direction: column;

@@ -2,7 +2,7 @@
     height: 90vh;
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 15px;
 }
 
@@ -18,7 +18,7 @@
 
 .date {
     font-size: 13px;
-    color: rgb(1, 124, 206);
+    color: var(--color-date);
     margin: 0px 0px 6px 6px;
 }
 

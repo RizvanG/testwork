@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
+import Accordion from "./Accordion/Accordion";
+import { URL } from "../../constants/constants";
 import axios from "axios";
 import style from "./News.module.css";
 
+
 export default function News({ title }) {
-    const [isActive, setActive] = useState();
     const [data, setData] = useState();
 
     const getListNews = async () => {
         try {
-            await axios.get("http://localhost:5020/api/news").then((res) => {
-                const news = res.data;
-                setData(news);
-            });
+            const { data } = await axios.get(`${URL}/news`);
+            setData(data);
         } catch (error) {
             console.log(error);
         }
@@ -22,46 +21,13 @@ export default function News({ title }) {
         getListNews();
     }, []);
 
-    const handleClick = (e) => {
-        if (isActive == e) {
-            return setActive(null);
-        }
-        setActive(e);
-    };
-
     return (
         <div className={style.news}>
             <div className={style.news_body}>
-                <div className={style.head}>{title}</div>
-                <div className={style.content}>
-                    {data?.map(({ label, date, content }, index) => (
-                        <>
-                            <div
-                                className={style.accordian}
-                                key={index}
-                                index={index}
-                                onClick={() => handleClick(index)}
-                            >
-                                <div className={style.date}>
-                                    {date}
-                                    <IoMdArrowDropdown
-                                        className={style.accordianIcon}
-                                    />
-                                </div>
-                                <div className={style.label}>{label}</div>
-                            </div>
-                            <div
-                                className={
-                                    isActive == index
-                                        ? "content_active"
-                                        : "content"
-                                }
-                            >
-                                {content}
-                            </div>
-                        </>
-                    ))}
-                </div>
+                <div className={style.title}>{title}</div>
+                {data?.map((item, index) => (
+                    <Accordion data={item} key={index} />
+                ))}
             </div>
         </div>
     );

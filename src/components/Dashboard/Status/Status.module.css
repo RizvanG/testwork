@@ -20,16 +20,16 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
-    color: #616161;
-    background-color: #b5b5b5;
+    color: var(--txt-status-bar);
+    background-color: var(--bg-status-bar);
 }
 
 .status_tab:hover {
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
-    color: #000;
-    background-color: #b5b5b5;   
+    color: var(--black);
+    background-color: var(--bg-status-bar);   
 }
 
 .status_tab_content {
@@ -38,10 +38,10 @@
 
 .status_btn {
     font-size: 18px;
-    color: #000;
+    color: var(--black);
     cursor: pointer;
     padding: 15px 40px;
     border-radius: 20px;
-    background-color: rgb(241, 238, 236);
+    background-color: var(--bg-status-btn);
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiFillBulb } from "react-icons/ai";
+import { URL } from "../../constants/constants";
 import axios from "axios";
 import style from "./Events.module.css";
 
@@ -8,10 +9,8 @@ export default function Events({ title }) {
 
     const getListEvents = async () => {
         try {
-            axios.get("http://localhost:5020/api/events").then((res) => {
-                const events = res.data;
-                setData(events);
-            });
+            const { data } = await axios.get(`${URL}/events`);
+            setData(data);
         } catch (error) {
             console.log(error);
         }

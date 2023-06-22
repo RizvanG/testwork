@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BiUserCheck } from 'react-icons/bi'
+import { Typography } from "@mui/material";
 import style from './Sidebar.module.css';
 
 export default function Sidebar() {
@@ -8,10 +9,10 @@ export default function Sidebar() {
         <div className={style.sidebar}>
             <div className={style.sidebar_box}>
                 <div className={style.logo}>
-                    <BiUserCheck className={style.iconLogo}/>
-                    <p className={style.iconText}>ChangePlan</p>
+                    <BiUserCheck className={style.icon_logo}/>
+                    <Typography className={style.icon_text}>ChangePlan</Typography>
                 </div>
-                <p className={style.txt}>Единственная инициатива/вид</p>
+                <Typography className={style.txt}>Единственная инициатива/вид</Typography>
                 <div className={style.nav}>
                     <Link to='/' className={style.button}>
                         Главная       
