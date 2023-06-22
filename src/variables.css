@@ -1,0 +1,16 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --green: #008000;
+    --color-btn: #05b9f0;
+    --color-date: #017cce;
+    --color-text-card: #1a7ef0;
+    --bg-status-btn: #f1eeec;
+    --bg-main: #DFDFDF;
+    --bg-bar: #ebebeb;
+    --bg-sidebar: #025da8; 
+    --bg-status-bar: #b5b5b5;
+    --txt-status-bar: #616161;
+    --accordion-border-color: #B6B2B2;
+    --accordion-date-color: #858282;
+}
