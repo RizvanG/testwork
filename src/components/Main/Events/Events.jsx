@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiFillBulb } from "react-icons/ai";
-import { URL } from "../../constants/constants";
+import { URL } from "../../../constants/constants";
 import axios from "axios";
 import style from "./Events.module.css";
 

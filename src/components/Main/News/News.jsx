@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Accordion from "./Accordion/Accordion";
-import { URL } from "../../constants/constants";
+import { URL } from "../../../constants/constants";
 import axios from "axios";
 import style from "./News.module.css";
 

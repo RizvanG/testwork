@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { URL } from "../../constants/constants";
+import { URL } from "../../../constants/constants";
 import axios from "axios";
 import style from "./Scenarios.module.css";
 
