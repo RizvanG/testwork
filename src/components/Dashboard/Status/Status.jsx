@@ -1,125 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as xlsx from "xlsx";
-import { TABS } from "../../constants/constants";
+import { TABS } from "../../../constants/constants";
 import TabContent from "./TabContent";
+import { WeekDataContext } from '../../../context/WeekDataContext'
 import style from "./Status.module.css";
 
 export default function Status() {
   const [currentTab, setCurrentTab] = useState(2);
-
-  const prevWeek = [
-    {
-      name: "Задача 1",
-      calories: 12,
-      fat: "Выполнено",
-      carbs: 37,
-      protein: 4,
-    },
-    {
-      name: "Задача 2",
-      calories: 5,
-      fat: "Выполнено",
-      carbs: 24,
-      protein: 4,
-    },
-    {
-      name: "Задача 3",
-      calories: 23,
-      fat: "В процессе",
-      carbs: 24,
-      protein: 6,
-    },
-    {
-      name: "Задача 4",
-      calories: 7,
-      fat: "В процессе",
-      carbs: 67,
-      protein: 4,
-    },
-    {
-      name: "Задача 5",
-      calories: 51,
-      fat: "Выполнено",
-      carbs: 49,
-      protein: 3,
-    },
-  ];
-
-  const currentWeek = [
-    {
-      name: "Задача 6",
-      calories: 12,
-      fat: "В процессе",
-      carbs: 37,
-      protein: 4,
-    },
-    {
-      name: "Задача 7",
-      calories: 5,
-      fat: "В процессе",
-      carbs: 24,
-      protein: 4,
-    },
-    {
-      name: "Задача 8",
-      calories: 23,
-      fat: "В процессе",
-      carbs: 24,
-      protein: 6,
-    },
-    {
-      name: "Задача 9",
-      calories: 7,
-      fat: "В процессе",
-      carbs: 67,
-      protein: 4,
-    },
-    {
-      name: "Задача 10",
-      calories: 51,
-      fat: "В процессе",
-      carbs: 49,
-      protein: 3,
-    },
-  ];
-
-  const nextWeek = [
-    {
-      name: "Задача 11",
-      calories: 12,
-      fat: "Не активно",
-      carbs: 37,
-      protein: 4,
-    },
-    {
-      name: "Задача 12",
-      calories: 5,
-      fat: "Не активно",
-      carbs: 24,
-      protein: 4,
-    },
-    {
-      name: "Задача 13",
-      calories: 23,
-      fat: "Не активно",
-      carbs: 24,
-      protein: 6,
-    },
-    {
-      name: "Задача 14",
-      calories: 7,
-      fat: "Не активно",
-      carbs: 67,
-      protein: 4,
-    },
-    {
-      name: "Задача 15",
-      calories: 51,
-      fat: "Не активно",
-      carbs: 49,
-      protein: 3,
-    },
-  ];
+  const data = useContext(WeekDataContext);
 
   const handleChange = (index) => {
     setCurrentTab(index);
@@ -128,15 +16,16 @@ export default function Status() {
   const handleClickExport = () => {
     let ws =
     currentTab == 1
-        ? xlsx.utils.json_to_sheet(prevWeek)
+        ? xlsx.utils.json_to_sheet(data[0]?.prevWeek)
         : currentTab == 2
-        ? xlsx.utils.json_to_sheet(currentWeek)
-        : xlsx.utils.json_to_sheet(nextWeek);
+        ? xlsx.utils.json_to_sheet(data[0]?.currentWeek)
+        : xlsx.utils.json_to_sheet(data[0]?.nextWeek);
     xlsx.utils.sheet_add_aoa(
       ws,
       [["Задача", "Время", "Статус", "Значение", "Осталось"]],
       { origin: "A1" }
     );
+    console.log(ws);
     let wb = xlsx.utils.book_new();
     xlsx.utils.book_append_sheet(wb, ws, "MySheet1");
     xlsx.writeFile(wb, "MyExcel.xlsx");
