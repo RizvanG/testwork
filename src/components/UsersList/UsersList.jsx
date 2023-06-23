@@ -10,7 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import LineChart from "./BarChart/BarChart";
 import TableBox from "./TableBox/TableBox";
-import { URL } from "../constants/constants";
+import { URL } from "../../constants/constants";
 import axios from "axios";
 import style from "./UsersList.module.css";
 
